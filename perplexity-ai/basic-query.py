@@ -17,7 +17,7 @@ messages = [
 
 # Chat Completions API
 response = client.chat.completions.create(
-    model = "sonar-pro",
+    model = "sonar",
     messages = messages,
     temperature = 0.7,
     max_tokens = 300
