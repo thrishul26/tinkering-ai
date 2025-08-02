@@ -1,11 +1,14 @@
 import os
 from openai import OpenAI
 from dotenv import load_dotenv
+from zscaler_proxy import main
 load_dotenv()
 
+http_client = main()
 client = OpenAI(
     api_key = os.getenv("PERPLEXITY_API_KEY"),
-    base_url = "https://api.perplexity.ai"
+    base_url = "https://api.perplexity.ai",
+    http_client=http_client
 )
 
 messages = [
